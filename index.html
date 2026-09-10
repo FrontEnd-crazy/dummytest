@@ -4,25 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Material Landing Page</title>
-<script type='text/javascript'>
-    function initEmbeddedMessaging() {
-        try {
-            embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
-            console.log('loading Embedded Messaging: ');
-            embeddedservice_bootstrap.init(
-                '00DWr00000CBxST',
-                'ENV_Chat_Implant_Direct_NA',
-                'https://envista--envdev3.sandbox.my.site.com/ESWENVChatImplantDirec1785831226828',
-                {
-                    scrt2URL: 'https://envista--envdev3.sandbox.my.salesforce-scrt.com'
-                }
-            );
-        } catch (err) {
-            console.error('Error loading Embedded Messaging: ', err);
-        }
-    };
-</script>
-<script type='text/javascript' src='https://envista--envdev3.sandbox.my.site.com/ESWENVChatImplantDirec1785831226828/assets/js/bootstrap.min.js%27 onload='initEmbeddedMessaging()'></script>
 <style>
 *{
     margin:0;
@@ -372,5 +353,24 @@ footer{
     © 2026 Nova. All Rights Reserved.
 </footer>
 
+<script type='text/javascript' src='https://envista--envdev3.sandbox.my.site.com/ESWENVChatImplantDirec1785831226828/assets/js/bootstrap.min.js%27 onload='initEmbeddedMessaging()'></script>
+<script type='text/javascript'>
+    function initEmbeddedMessaging() {
+        try {
+            embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+            console.log('loading Embedded Messaging: ');
+            embeddedservice_bootstrap.init(
+                '00DWr00000CBxST',
+                'ENV_Chat_Implant_Direct_NA',
+                'https://envista--envdev3.sandbox.my.site.com/ESWENVChatImplantDirec1785831226828',
+                {
+                    scrt2URL: 'https://envista--envdev3.sandbox.my.salesforce-scrt.com'
+                }
+            );
+        } catch (err) {
+            console.error('Error loading Embedded Messaging: ', err);
+        }
+    };
+</script>
 </body>
 </html>
