@@ -3,82 +3,395 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Modern Landing Page</title>
+<title>NovaX</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500play=swap
 
 <style>
+
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: 'Segoe UI', sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
-    background:#0f172a;
-    color:#fff;
+background:#050816;
+color:white;
+overflow-x:hidden;
 }
 
-.hero{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:20px;
-    background:linear-gradient(135deg,#2563eb,#7c3aed);
+section{
+padding:100px 8%;
 }
 
 .container{
-    max-width:700px;
+max-width:1200px;
+margin:auto;
 }
 
-h1{
-    font-size:3rem;
-    margin-bottom:15px;
+h1,h2{
+font-weight:700;
 }
 
-p{
-    font-size:1.1rem;
-    color:#e2e8f0;
-    margin-bottom:30px;
-    line-height:1.6;
+.gradient{
+background:linear-gradient(90deg,#00E5FF,#7B61FF);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+/* NAVBAR */
+
+nav{
+position:fixed;
+width:100%;
+top:0;
+left:0;
+padding:18px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(10px);
+z-index:1000;
+}
+
+.logo{
+font-size:26px;
+font-weight:700;
+}
+
+nav ul{
+display:flex;
+gap:25px;
+list-style:none;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+}
+
+/* HERO */
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+position:relative;
+}
+
+.hero::before{
+content:'';
+position:absolute;
+width:500px;
+height:500px;
+background:#7B61FF;
+filter:blur(180px);
+opacity:.4;
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+}
+
+.hero h1{
+font-size:4rem;
+margin-bottom:20px;
+line-height:1.2;
+}
+
+.hero p{
+max-width:700px;
+margin:auto;
+opacity:.8;
+margin-bottom:35px;
 }
 
 .btn{
-    display:inline-block;
-    padding:14px 30px;
-    background:white;
-    color:#2563eb;
-    text-decoration:none;
-    border-radius:50px;
-    font-weight:600;
-    transition:.3s;
+padding:15px 35px;
+border:none;
+border-radius:50px;
+cursor:pointer;
+background:linear-gradient(90deg,#00E5FF,#7B61FF);
+color:white;
+font-size:16px;
+font-weight:600;
+transition:.4s;
+text-decoration:none;
 }
 
 .btn:hover{
-    transform:translateY(-3px);
-    box-shadow:0 10px 25px rgba(0,0,0,.2);
+transform:translateY(-5px);
+box-shadow:0 20px 30px rgba(123,97,255,.4);
 }
 
-@media(max-width:768px){
-    h1{
-        font-size:2.2rem;
-    }
-    p{
-        font-size:1rem;
-    }
+/* FEATURES */
+
+.features-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+margin-top:50px;
 }
+
+.card{
+padding:35px;
+border-radius:20px;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(15px);
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card h3{
+margin:15px 0;
+}
+
+/* STATS */
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+text-align:center;
+}
+
+.stat-box{
+background:rgba(255,255,255,.05);
+padding:40px;
+border-radius:20px;
+}
+
+.stat-box h2{
+font-size:3rem;
+color:#00E5FF;
+}
+
+/* TESTIMONIALS */
+
+.testimonials{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
+margin-top:40px;
+}
+
+.testimonial{
+padding:30px;
+background:rgba(255,255,255,.05);
+border-radius:20px;
+}
+
+/* CTA */
+
+.cta{
+text-align:center;
+padding:120px 8%;
+}
+
+.cta h2{
+font-size:3rem;
+margin-bottom:20px;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:30px;
+border-top:1px solid rgba(255,255,255,.1);
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(50px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.animate{
+animation:fadeUp 1s ease forwards;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:2.5rem;
+}
+
+.cta h2{
+font-size:2rem;
+}
+
+nav ul{
+display:none;
+}
+
+}
+
 </style>
 </head>
 <body>
 
+<nav>
+<div class="logo gradient">NovaX</div>
+
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#">Features</a></li>
+<li><a href="#"></li>
+</ul>
+</nav>
+
+<!-- HERO -->
+
 <section class="hero">
-    <div class="container">
-        <h1>Build Something Amazing</h1>
-        <p>Create stunning digital experiences with modern design, fast performance, and seamless responsiveness.</p>
-        #Get Started</a>
-    </div>
+<div class="hero-content animate">
+<h1>Build The Future With <span class="gradient">NovaX</span></h1>
+<p>
+Transform your business with cutting-edge technology,
+beautiful design, and exceptional performance.
+</p>
+
+<a href="#" class="div>
 </section>
 
+<!-- FEATURES -->
+
+<section>
+<div class="container">
+<h2 class="gradient">Why Choose Us</h2>
+
+<div class="features-grid">
+
+<div class="card">
+<h3>⚡ Lightning Fast</h3>
+<p>Optimized for speed and performance.</p>
+</div>
+
+<div class="card">
+<h3>🎨 Modern Design</h3>
+<p>Clean UI inspired by modern startups.</p>
+</div>
+
+<div class="card">
+<h3>🔒 Secure</h3>
+<p>Enterprise-level security and reliability.</p>
+</div>
+
+<div class="card">
+<h3>📈 Growth Ready</h3>
+<p>Built to scale with your business.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- STATS -->
+
+<section>
+<div class="container">
+
+<div class="stats">
+
+<div class="stat-box">
+<h2>50K+</h2>
+<p>Users</p>
+</div>
+
+<div class="stat-box">
+<h2>99%</h2>
+<p>Uptime</p>
+</div>
+
+<div class="stat-box">
+<h2>120+</h2>
+<p>Countries</p>
+</div>
+
+<div class="stat-box">
+<h2>4.9★</h2>
+<p>Ratings</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<!-- TESTIMONIALS -->
+
+<section>
+<div class="container">
+<h2 class="gradient">Loved By Users</h2>
+
+<div class="testimonials">
+
+<div class="testimonial">
+<p>
+"Absolutely amazing platform.
+Beautiful design and fast experience."
+</p>
+<br>
+<strong>John Smith</strong>
+</div>
+
+<div class="testimonial">
+<p>
+"Best startup template I've ever used.
+Looks extremely premium."
+</p>
+<br>
+<strong>Sarah Wilson</strong>
+</div>
+
+<div class="testimonial">
+<p>
+"Simple, modern, responsive and clean."
+</p>
+<br>
+<strong>David Lee</strong>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- CTA -->
+
+<section class="cta">
+
+<h2>Ready To Launch?</h2>
+
+<p style="margin-bottom:30px;opacity:.8;">
+Start building your next big idea today.
+</p>
+
+#Start Now</a>
+
+</section>
+
+<footer>
+© 2026 NovaX. All Rights Reserved.
+</footer>
+
 </body>
-</html>
+</html
